@@ -1,0 +1,43 @@
+---
+layout: ../../../layouts/Layout.astro
+title: "RISC-V"
+---
+
+import Important from "../../../components/Important.astro";
+
+# RISC-V
+
+Developed in 2010 at the _University of California, Berkeley_, RISC-V is a family of [instruction set architectures](https://en.wikipedia.org/wiki/Instruction_set) that are modeled around [RISC](https://en.wikipedia.org/wiki/Reduced_instruction_set_computer), the **r**educed **i**nstruction **s**et **c**omputer.
+
+Unlike other architecture families such as [x86](https://en.wikipedia.org/wiki/X86) or [Arm](https://en.wikipedia.org/wiki/ARM_architecture_family), official RISC-V architectures are _free-and-open-source (FOSS)_, so anyone, with the resources to do so, can create software, firmware, and hardware using the RISC-V technologies.
+
+## Base ISAs
+
+RISC-V is modular, so every feature set is described by an **extension**. The most basic computing operations are defined in the **I** extension (or, alternatively, the **E** extension, which removes the upper sixteen [registers](https://en.wikipedia.org/wiki/Processor_register)). Additionally, RISC-V is split into two[^1] distinct instruction sets: RV32 (32-bit) and RV64 (64-bit).
+
+<Important>
+  It is not possible to have a RISC-V processor without the **I** extension, as
+  it defines the most basic form of an architecture.
+</Important>
+
+## Extensions
+
+The **G** extension is a shortant for the **I**, **M**, **A**, **F**, **D**, **Ziscr**, and **Zifencei** extensions.
+
+_Sorted in the order that these are most common to appear in_
+
+| Extension | Description                                           | Documentation |
+| --------- | ----------------------------------------------------- | ------------- |
+| I         | Integers, using 32 general-purpose registers          | Planned       |
+| E         | Integers, using 16 general-purpose registers          | Planned       |
+| M         | Multiplication                                        | Planned       |
+| A         | Atomic operations                                     | Planned       |
+| F         | Single-precision IEEE 754 floating points             | Planned       |
+| D         | Double-precision IEEE 754 floating-point instructions | Planned       |
+| Ziscr     | Control and Status Register                           | Planned       |
+
+The primary difference between the two[^1] ISAs is their _XLEN_, or the length of their registers. RV32 defines XLEN as 32, while RV64 defines XLEN as 64. Because of this, RV32 can only address up to 4 GiB of memory[^2]
+
+[^1]: There is an unratified 128-bit architecture, RV128.
+
+[^2]: It is possible to use multiple registers to address more than 4 GiB of memory, although this is not standard.

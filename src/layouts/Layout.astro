@@ -1,0 +1,159 @@
+---
+const { frontmatter } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{frontmatter.title}</title>
+    </head>
+    <body>
+        <nav>
+            <a href="/">docs</a>
+        </nav>
+        <main>
+            <slot />
+        </main>
+        <footer>
+            <p>
+                This project is made with love by It Just Crashed; all code is
+                voluntarily released to the public domain under the Unlicense.
+            </p>
+        </footer>
+    </body>
+</html>
+
+<style is:global>
+    :root {
+        --theme-accent: #e99167ff;
+        --theme-accent-foreground: #000000;
+
+        --theme-background-1: #0b0b0eff;
+        --theme-background-2: #17171cff;
+
+        --theme-foreground-1: #e6dfdf;
+        --theme-foreground-2: #948f8fff;
+    }
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+
+        color: var(--theme-foreground-1);
+        background-color: var(--theme-background-1);
+
+        font-family:
+            ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo,
+            Courier, monospace;
+    }
+
+    body {
+        padding: 16px;
+    }
+
+    footer {
+        margin-block: 16px;
+        padding-block: 4px;
+        padding-inline: 16px;
+
+        color: var(--theme-foreground-2);
+        background-color: var(--theme-background-2);
+
+        /*border-radius: 16px;
+      @supports (corner-shape: squircle) {
+        border-radius: 32px;
+        corner-shape: squircle;
+      }*/
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-block: 16px;
+
+        font-weight: normal;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+    }
+
+    h4 {
+        font-size: 1.5rem;
+    }
+
+    h5 {
+        font-size: 1.25rem;
+    }
+
+    h6 {
+        font-size: 1rem;
+    }
+
+    p {
+        margin-block: 16px;
+
+        line-height: 2;
+    }
+
+    a {
+        color: var(--theme-accent);
+
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    nav a {
+        padding: 8px;
+
+        color: var(--theme-accent);
+
+        text-decoration: none;
+    }
+
+    nav a:hover {
+        color: var(--theme-accent-foreground);
+        background-color: var(--theme-accent);
+
+        text-decoration: underline;
+    }
+
+    ul {
+        list-style-position: inside;
+    }
+
+    blockquote {
+        margin-block: 16px;
+        padding: 16px;
+
+        border-left: 4px solid var(--theme-accent);
+
+        font-size: 1.2rem;
+        font-style: italic;
+    }
+
+    th,
+    td {
+        padding: 8px;
+        text-align: start;
+    }
+</style>
