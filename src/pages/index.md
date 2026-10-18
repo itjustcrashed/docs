@@ -7,6 +7,6 @@ title: "Documentation by It Just Crashed"
 
 You've found my open-source, public-domain catalog of code documentation.
 
-| Technology               | Description                                 |
-| ------------------------ | ------------------------------------------- |
-| [RISC-V](catalog/riscv/) | Architectural reference for the RISC-V ISAs |
+| Technology              | Description                                 |
+| ----------------------- | ------------------------------------------- |
+| [RISC-V](catalog/riscv) | Architectural reference for the RISC-V ISAs |
