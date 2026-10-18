@@ -1,0 +1,57 @@
+---
+layout: ../../../../layouts/Layout.astro
+title: "RISC-V Extension: I"
+---
+
+From [RISC-V](/catalog/riscv)
+
+# RISC-V Extension: I
+
+The **I** (integer) extension defines the most basic parts of RISC-V architectures. All RISC-V processors **must** implement the **I** extension[^1].
+
+## Terminology
+
+**GPR** — general purpose register
+
+## Registers
+
+The **I** extension includes 32 GPRs. Each register has a name , purpose (ABI name), and policy on saving.
+
+Callee-saved registers must be preserved by functions so that they stay the same before and after a function call, while caller-saved registers can be modified by called functions.
+
+| Register | Name in ABI                     | Callee-saved | Notes                                                                   |
+| -------- | ------------------------------- | ------------ | ----------------------------------------------------------------------- |
+| `x0`     | `zero`                          | —            | Writes are ignored, reading yields the value `0`                        |
+| `x1`     | `ra` (return address)           | No           | Return address (a.k.a. the address of the caller)                       |
+| `x2`     | `sp` (stack pointer)            | Yes          | Address of the most recently pushed stack item                          |
+| `x3`     | `gp` (global pointer)           | —            | Written at program start; address near the middle of global data memory |
+| `x4`     | `tp` (thread pointer)           | —            | Often written at program start; address of thread-local storage         |
+| `x5`     | `t0` (temporary)                | No           | —                                                                       |
+| `x6`     | `t1` (temporary)                | No           | —                                                                       |
+| `x7`     | `t2` (temporary)                | No           | —                                                                       |
+| `x8`     | `s0`/`fp` (saved/frame pointer) | Yes          | Address of most recently pushed frame record when used as `fp`          |
+| `x9`     | `s1` (saved)                    | Yes          | Saved register                                                          |
+| `x10`    | `a0` (argument/return)          | No           | First argument OR first return value                                    |
+| `x11`    | `a1` (argument/return)          | No           | Second argument OR second return value                                  |
+| `x12`    | `a2` (argument)                 | No           | Third argument                                                          |
+| `x13`    | `a3` (argument)                 | No           | Fourth argument                                                         |
+| `x14`    | `a4` (argument)                 | No           | Fifth argument                                                          |
+| `x15`    | `a5` (argument)                 | No           | Sixth argument                                                          |
+| `x16`    | `a6` (argument)                 | No           | Seventh argument                                                        |
+| `x17`    | `a7` (argument)                 | No           | Eighth argument                                                         |
+| `x18`    | `s2` (saved)                    | Yes          | —                                                                       |
+| `x19`    | `s3` (saved)                    | Yes          | —                                                                       |
+| `x20`    | `s4` (saved)                    | Yes          | —                                                                       |
+| `x21`    | `s5` (saved)                    | Yes          | —                                                                       |
+| `x22`    | `s6` (saved)                    | Yes          | —                                                                       |
+| `x23`    | `s7` (saved)                    | Yes          | —                                                                       |
+| `x24`    | `s8` (saved)                    | Yes          | —                                                                       |
+| `x25`    | `s9` (saved)                    | Yes          | —                                                                       |
+| `x26`    | `s10` (saved)                   | Yes          | —                                                                       |
+| `x27`    | `s11` (saved)                   | Yes          | —                                                                       |
+| `x28`    | `t3` (temporary)                | No           | —                                                                       |
+| `x29`    | `t4` (temporary)                | No           | —                                                                       |
+| `x30`    | `t5` (temporary)                | No           | —                                                                       |
+| `x31`    | `t6` (temporary)                | No           | —                                                                       |
+
+[^1]: The **E** (embedded) extension can replace the **I** extension, as it is identical apart from having only 16 GPRs.

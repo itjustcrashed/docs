@@ -26,15 +26,15 @@ The **G** extension is a shorthand for the **I**, **M**, **A**, **F**, **D**, **
 
 _Sorted in the order that these are most common to appear in_
 
-| Extension | Description                                           | Documentation |
-| --------- | ----------------------------------------------------- | ------------- |
-| I         | Integers, using 32 general-purpose registers          | Planned       |
-| E         | Integers, using 16 general-purpose registers          | Planned       |
-| M         | Multiplication                                        | Planned       |
-| A         | Atomic operations                                     | Planned       |
-| F         | Single-precision IEEE 754 floating points             | Planned       |
-| D         | Double-precision IEEE 754 floating-point instructions | Planned       |
-| Ziscr     | Control and Status Register                           | Planned       |
+| Extension | Description                                           | Documentation                            |
+| --------- | ----------------------------------------------------- | ---------------------------------------- |
+| I         | Integers, using 32 general-purpose registers          | [Available](/catalog/riscv/extensions/i) |
+| E         | Integers, using 16 general-purpose registers          | Planned                                  |
+| M         | Multiplication                                        | Planned                                  |
+| A         | Atomic operations                                     | Planned                                  |
+| F         | Single-precision IEEE 754 floating points             | Planned                                  |
+| D         | Double-precision IEEE 754 floating-point instructions | Planned                                  |
+| Ziscr     | Control and Status Register                           | Planned                                  |
 
 The primary difference between the two[^1] ISAs is their _XLEN_, or the length of their registers. RV32 defines XLEN as 32, while RV64 defines XLEN as 64. Because of this, RV32 can only address up to 4 GiB of memory[^2]
 
